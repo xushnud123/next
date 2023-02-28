@@ -1,0 +1,25 @@
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 35px;
+  line-height: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.ol li {
+  padding: 10px 20px;
+  background: rgb(152, 221, 193);
+  cursor: pointer;
+  transition: all linear 0.2s;
+}
+.ol li:not(:nth-child(1)) {
+  margin-top: 20px;
+}
+
+.ol li:hover {
+  background: rgb(38, 195, 132);
+}
