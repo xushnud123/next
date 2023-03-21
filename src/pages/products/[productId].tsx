@@ -22,26 +22,31 @@ export const getStaticPaths: GetStaticPaths = async () => {
   // });
   return {
     paths: [{ params: { productId: "1" } }],
-    fallback: true,
+    fallback: false,
   };
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  console.log("ISR");
-  const { params } = context;
-  const res = await fetch(
-    `http://localhost:4000/products/${params?.productId}`
-  ).then((res) => res.json());
+  // console.log("ISR");
+  // const { params } = context;
+  // const res = await fetch(
+  //   `http://localhost:4000/products/${params?.productId}`
+  // ).then((res) => res.json());
 
-  if (!res.id) {
-    return {
-      notFound: true,
-    };
-  }
+  // if (!res.id) {
+  //   return {
+  //     notFound: true,
+  //   };
+  // }
 
   return {
     props: {
-      product: res,
+      product: {
+        id: 1,
+        description: "description",
+        title: "Hello",
+        price: "10$",
+      },
     },
     revalidate: 10,
   };

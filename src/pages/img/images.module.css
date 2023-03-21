@@ -1,0 +1,14 @@
+.wrapper {
+}
+.img {
+  width: 500px;
+  height: 700px;
+}
+.row {
+  width: 500px;
+  height: 700px;
+  position: relative;
+}
+.row img {
+  object-fit: cover;
+}

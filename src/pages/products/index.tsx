@@ -38,13 +38,22 @@ const Products: FC<ProductsProps> = ({ products }) => {
 export default Products;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch("http://localhost:4000/products").then((res) =>
-    res.json()
-  );
+  // const res = await fetch("http://localhost:4000/products").then((res) =>
+  //   res.json()
+  // );
 
   return {
     props: {
-      products: res,
+      products: [
+        {
+          product: {
+            id: 1,
+            description: "description",
+            title: "Hello",
+            price: "10$",
+          },
+        },
+      ],
     },
     revalidate: 10,
   };
